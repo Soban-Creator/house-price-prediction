@@ -1,6 +1,14 @@
 from src.predict import predict_house_price
 from fastapi import FastAPI
 from pydantic import BaseModel
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -17,13 +25,19 @@ class HouseData(BaseModel):
 @app.get("/")
 def home():
     return {"message": "Welcome to the House Price Prediction API!"}
+
 @app.get("/health")
 def health():
+
+    logger.info("Health endpoint accessed.")
+
     return {
         "status": "Healthy"
     }
 @app.get("/model-info")
 def model_info():
+
+    logger.info("Model information requested.")
 
     return {
         "Model": "Random Forest Regressor",
@@ -45,7 +59,11 @@ def predict(data: HouseData):
         "GarageArea": data.GarageArea
     }
 
+    logger.info("Prediction request received.")
+
     prediction = predict_house_price(input_data)
+
+    logger.info(f"Prediction generated: {prediction}")
 
     return {
         "predicted_price": prediction
