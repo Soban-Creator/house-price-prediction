@@ -24,6 +24,7 @@ class HouseData(BaseModel):
 
 @app.get("/")
 def home():
+    logger.info("Home endpoint accessed.")
     return {"message": "Welcome to the House Price Prediction API!"}
 
 @app.get("/health")
@@ -44,6 +45,12 @@ def model_info():
         "Preprocessing": "ColumnTransformer + OneHotEncoder",
         "Pipeline": "Loaded",
         "Status": "Ready for Prediction"
+         "version": "1.0",
+        "created_at": "2026-07-20",
+        "metrics": {
+            "rmse": 2.5,
+            "r2_score": 0.89
+        }
     }
 @app.post("/predict")
 def predict(data: HouseData):
