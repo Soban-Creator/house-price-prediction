@@ -306,7 +306,7 @@ The frontend does not perform any Machine Learning computations. All predictions
 
 COMSATS University Islamabad, Wah Campus
 
-Bachelor of Science in Computer Science
+Bachelor of Science in Software Engineering
 
 ---
 
