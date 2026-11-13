@@ -192,7 +192,11 @@ cd HousePricePrediction
 Install dependencies:
 
 ```bash
+
+git clone https://github.com/Soban-Creator/house-price-prediction.git
+cd house-price-prediction
 pip install -r requirements.txt
+
 ```
 
 ---
