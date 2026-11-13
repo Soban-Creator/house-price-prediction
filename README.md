@@ -175,28 +175,25 @@ HousePricePrediction/
 
 ---
 
+
 # Installation
 
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Soban-Creator/house-price-prediction.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd HousePricePrediction
+cd house-price-prediction
 ```
 
 Install dependencies:
 
 ```bash
-
-git clone https://github.com/Soban-Creator/house-price-prediction.git
-cd house-price-prediction
 pip install -r requirements.txt
-
 ```
 
 ---
