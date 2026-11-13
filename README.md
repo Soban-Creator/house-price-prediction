@@ -302,7 +302,7 @@ The frontend does not perform any Machine Learning computations. All predictions
 
 # Author
 
-**Soban Mudassar**
+**Syed Soban Mudassar**
 
 COMSATS University Islamabad, Wah Campus
 
