@@ -1,0 +1,54 @@
+
+# HomeValue AI - Docker Ignore Rules
+
+# Git
+.git
+.github
+.gitignore
+
+# Virtual environments
+.venv
+venv
+env
+ENV
+house_ml
+
+# Python cache
+**/__pycache__
+**/*.pyc
+**/*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# IDE and OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Development files
+tests
+notebooks
+data
+.ipynb_checkpoints
+requirements-dev.txt
+
+# Documentation and archives
+*.md
+*.pdf
+*.docx
+*.zip
+
+# Browser-generated exports
+*Dashboard_files*
+**/~BROMIUM
+
+# Temporary files and logs
+*.log
+*.tmp
+*.bak
