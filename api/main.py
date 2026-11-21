@@ -1,3 +1,4 @@
+"""FastAPI backend for the HomeValue AI house price prediction system."""
 
 import logging
 import math
@@ -6,7 +7,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from src.predict import predict_house_price
-
 
 # --------------------------------------------------
 # Logging configuration
@@ -39,6 +39,8 @@ app = FastAPI(
 # --------------------------------------------------
 
 class HouseData(BaseModel):
+    """Validate the eight property features required for prediction."""
+
     OverallQual: int = Field(
         ...,
         ge=1,
@@ -102,6 +104,7 @@ class HouseData(BaseModel):
 
 @app.get("/")
 def home():
+    """Return the API welcome message."""
     logger.info("Home endpoint accessed.")
 
     return {
@@ -115,6 +118,7 @@ def home():
 
 @app.get("/health")
 def health():
+    """Return the API health status."""
     logger.info("Health endpoint accessed.")
 
     return {
@@ -128,6 +132,7 @@ def health():
 
 @app.get("/model-info")
 def model_info():
+    """Return information about the production prediction pipeline."""
     logger.info("Model information requested.")
 
     return {
@@ -144,6 +149,7 @@ def model_info():
 
 @app.post("/predict")
 def predict(data: HouseData):
+    """Validate property data and return an estimated house price."""
     logger.info("Prediction request received.")
 
     # Convert API field names into the feature names
