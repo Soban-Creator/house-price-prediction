@@ -47,6 +47,7 @@ notebooks/house_price_model.pkl
 
 # Browser-saved webpage exports
 *Dashboard_files/
+*Render Dashboard.html
 
 # Temporary browser-generated directories
 **/~BROMIUM/
