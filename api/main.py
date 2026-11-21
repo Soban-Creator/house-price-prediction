@@ -132,7 +132,7 @@ def model_info():
 
     return {
         "Model": "Random Forest Regressor",
-        "Preprocessing": "ColumnTransformer + OneHotEncoder",
+        "Preprocessing": "ColumnTransformer (8 numerical features passed through)",
         "Pipeline": "Loaded",
         "Status": "Ready for Prediction",
     }
