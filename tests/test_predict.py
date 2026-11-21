@@ -5,7 +5,6 @@ import math
 
 from src.predict import predict_house_price
 
-
 SAMPLE_HOUSE = {
     "OverallQual": 7,
     "GrLivArea": 1710,

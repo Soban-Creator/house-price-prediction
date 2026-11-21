@@ -8,7 +8,6 @@ import pandas as pd
 from sklearn.base import clone
 from sklearn.model_selection import KFold, cross_validate, train_test_split
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "data" / "train.csv"
 MODEL_PATH = BASE_DIR / "models" / "house_price_pipeline_top8.pkl"
