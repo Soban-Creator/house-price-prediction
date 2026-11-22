@@ -650,7 +650,7 @@ if submitted:
                 response = requests.post(
                     f"{API_BASE_URL}/predict",
                     json=house_data,
-                    timeout=20
+                    timeout=120
                 )
 
                 response.raise_for_status()
