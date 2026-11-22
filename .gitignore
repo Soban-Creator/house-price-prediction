@@ -41,3 +41,13 @@ htmlcov/
 # Temporary Files
 *.tmp
 *.bak
+
+# Generated notebook model (duplicate of the model in models/)
+notebooks/house_price_model.pkl
+
+# Browser-saved webpage exports
+*Dashboard_files/
+*Render Dashboard.html
+
+# Temporary browser-generated directories
+**/~BROMIUM/

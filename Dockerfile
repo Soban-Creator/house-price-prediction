@@ -1,26 +1,28 @@
-# Use an official Python runtime as the base image
-FROM python:3.13-slim
 
-# Prevent Python from writing .pyc files
-ENV PYTHONDONTWRITEBYTECODE=1
+# HomeValue AI - FastAPI Backend
+# Python version compatible with the trained ML model
 
-# Ensure Python output is sent straight to the terminal
-ENV PYTHONUNBUFFERED=1
+FROM python:3.12-slim
 
-# Set the working directory inside the container
+# Python runtime configuration
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Application directory
 WORKDIR /app
 
-# Copy the dependency file first
+# Install dependencies
 COPY requirements.txt .
 
-# Install project dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project
-COPY . .
+# Copy only the files needed by the backend
+COPY api/ ./api/
+COPY src/ ./src/
+COPY models/ ./models/
 
-# Expose the FastAPI port
+# Default FastAPI port
 EXPOSE 8000
 
-# Start the FastAPI application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+# Start the API, supporting cloud-provided PORT values
+CMD ["sh", "-c", "exec python -m uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
